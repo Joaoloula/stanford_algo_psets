@@ -1,8 +1,8 @@
 def karatsuba(x, y):
     """ Takes two multiple digit integers and outputs their product"""
     # Handle base case
-    if x<10 or y<10:
-        return x*y
+    if x < 10 or y < 10:
+        return x * y
 
     str_x = str(x)
     str_y = str(y)
@@ -19,6 +19,8 @@ def karatsuba(x, y):
     adbc = karatsuba(a+b, c+d) - ac - bd
 
     # Compute product
-    product = ac*1e4 + adbc*1e2 + bd
+    product = (ac * (10 ** (2 * (len(str_x) / 2))) +
+               adbc * (10 ** (len(str_x) / 2)) +
+               bd)
 
     return product
