@@ -16,10 +16,10 @@ def count_inversions(array):
     sorted_array2, inv2 = count_inversions(array2)
 
     # Merge while counting inversions
-    sorted_array = np.empty(n)
+    sorted_array = [0] * n
     i, j = 0, 0
     inv = 0
-    while i < n/2 and j < n-n/2:
+    while i < n/2 or j < n-n/2:
         # If we already finished array 1, insert from array 2
         if i == n/2:
             sorted_array[i + j] = sorted_array2[j]
@@ -32,7 +32,7 @@ def count_inversions(array):
 
         # If both arrays are not yet finished, compare current values
         else:
-            if sorted_array1[i] < sorted_array[j]:
+            if sorted_array1[i] < sorted_array2[j]:
                 sorted_array[i + j] = sorted_array1[i]
                 i += 1
             else:
