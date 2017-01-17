@@ -1,6 +1,0 @@
-1. nlog(n)
-2. True
-3. Sometimes yes, sometimes no (depending on f and g)
-   Yes if f(n) <= g(n) for sufficiently large n
-4.theta(nk^2)
-5.daceb
